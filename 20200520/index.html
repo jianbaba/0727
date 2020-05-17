@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "2">
+<html xmlns="">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>xixi</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">*2020—05-20</span><br />
+			<span class="space"/><span class="comments">*/</span><br />
+			This is <span class="keyword">you</span> ->  Mr.<span class="keyword">Andy</span><br />
+			This is <span class="keyword">me</span>&nbsp; -> Mr.<span class="keyword">Jack</span><br />
+			<span class="comments">// When the words "<span class="keyword">I love you</span>" were said by <span class="keyword">Andy</span> for the first time, <span class="keyword">Jack's</span> world blossoms. </span><br />
+			<span class="keyword">I</span> love <span class="keyword">you</span> very much,<br />
+			<span class="comments">// However,</span><br />
+			<span class="keyword">You</span> love <span class="keyword">me</span> just a little(of course not).<br />
+			<span class="comments">// After being together,</span><br />
+			<span class="keyword">I</span> call <span class="keyword">you</span> baby,<br />
+			<span class="comments">// At the same time,</span><br />
+			<span class="keyword">You</span> call <span class="keyword">me</span> dady.<br />
+			<span class="comments">// hhh.........</span><br />
+			Do <span class="keyword">you</span> know why <span class="keyword">I</span> say good morning to <span class="keyword">you</span> every day?<br />
+			<span class="comments">//Because,</span><br />
+			<span class="keyword">You</span> are pretty much the only thing that makes <span class="keyword">me</span> want to get up in the morning. <br />
+			<span class="comments">// Tell <span class="keyword">you</span> a secret，</span><br />
+			When <span class="keyword">you</span> say good night to <span class="keyword">me，</span> I always want to do something bad with you!(hiahiahia)<br />
+			<span class="comments">// On this day full of special meaning,</span><br />
+			<span class="keyword">Jack</span> promise <span class="keyword">Andy</span> that Anywhere you are, I am near. Anywhere you go, I'll be there.<br />
+
+			<br>
+			<br>
+			Finally,I want to say:<br />
+			Baby, I love you forever。<br />
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					小耗纸，我们已经在一起
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					爱你，宝贝你，珍惜你--直到永远<br/>
+					<div class="signature">- 大喵咪</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="copyright">
+		<a href="#">....</a><br />
+		<a href="#">....</a><br />
+		
+	</div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2019, 10, 27);
+together.setHours(23);
+together.setMinutes(36);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+
+</body>
+</html>
