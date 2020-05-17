@@ -17,6 +17,7 @@
 <script type="text/javascript" src="js/functions.js"></script>
 <audio src="./xjn.mp3" autoplay="autoplay"> </audio> autoplay
 </head>
+
 <body>
 
 <div id="mainDiv">
@@ -36,13 +37,14 @@
 			<span class="comments">// At the same time,</span><br />
 			<span class="keyword">You</span> call <span class="keyword">me</span> dady.<br />
 			<span class="comments">// hhh.........</span><br />
+
 			Do <span class="keyword">you</span> know why <span class="keyword">I</span> say good morning to <span class="keyword">you</span> every day?<br />
 			<span class="comments">//Because,</span><br />
 			<span class="keyword">You</span> are pretty much the only thing that makes <span class="keyword">me</span> want to get up in the morning. <br />
 			<span class="comments">// Tell <span class="keyword">you</span> a secret，</span><br />
 			When <span class="keyword">you</span> say good night to <span class="keyword">me，</span> I always want to do something bad with you!(hiahiahia)<br />
 			<span class="comments">// On this day full of special meaning,</span><br />
-			<span class="keyword">Jack</span> promise <span class="keyword">Andy</span> that Anywhere you are, I am near. Anywhere you go, I'll be there.<br />
+			<span class="keyword">Jack</span> promises <span class="keyword">Andy</span> that Anywhere you are, I am near. Anywhere you go, I'll be there.<br />
 
 			<br>
 			<br>
@@ -69,7 +71,41 @@
 		
 	</div>
 </div>
+<!--下面是向右滚动代码-->
 
+<div id="butong_net_right" style="overflow:hidden;width:2000px;">
+<table cellpadding="0" cellspacing="0" border="0">
+<tr><td id="butong_net_right1" valign="top" align="center">
+<table cellpadding="2" cellspacing="0" border="0">
+<tr align="center">
+<td><img src="1.jpg"></td>
+<td><img src="2.jpg"></td>
+<td><img src="3.jpg"></td>
+<td><img src="4.jpg"></td>
+<td><img src="5.jpg"></td>
+</tr>
+</table>
+</td>
+<td id="butong_net_right2" valign="top"></td>
+</tr>
+</table>
+</div>
+<script>
+var speed=30//速度数值越大速度越慢
+butong_net_right2.innerHTML=butong_net_right1.innerHTML
+function Marquee4(){
+if(butong_net_right.scrollLeft<=0)
+butong_net_right.scrollLeft+=butong_net_right2.offsetWidth
+else{
+butong_net_right.scrollLeft--
+}
+}
+var MyMar4=setInterval(Marquee4,speed)
+butong_net_right.onmouseover=function() {clearInterval(MyMar4)}
+butong_net_right.onmouseout=function() {MyMar4=setInterval(Marquee4,speed)}
+</script>
+
+<!--向右滚动代码结束-->
 <script type="text/javascript">
 var offsetX = $("#loveHeart").width() / 2;
 var offsetY = $("#loveHeart").height() / 2 - 55;
